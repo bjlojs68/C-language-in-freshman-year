@@ -1,0 +1,13 @@
+#include<stdio.h>
+main ()
+{   int a[4];
+    int i,j,s=0;
+	scanf("%d%d%d%d",&a[0],&a[1],&a[2],&a[3]);
+	 j=1;
+	 for(i=3;i>=0;i--)
+	    {  s=s+a[i]*j;
+		   j=j*10;
+	    }
+	printf("请输入一个四位数的十进制整数；%d",s);
+	 
+ } 
