@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{  int a,b,c,x,h,i;
+   x=0;
+   h=0;
+   printf("请输入三个整数：");
+   scanf("%d,%d,%d\n",&a,&b,&c);
+   if(b/(2*a)>0)
+	  i=1;
+		 else 
+			 if(b/(2*a)<0)
+				 i=0;
+		 else 
+			 if(b/(2*a)==0)
+				 i=2;
+   do
+   {  if(a*x*x+b*x+c==0)
+   {printf("解为：%d",x);
+       h++;
+   }
+      else
+		  x--;         
+   }
+   while(h<=i);
+return 0;
