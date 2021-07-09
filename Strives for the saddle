@@ -1,0 +1,48 @@
+include<stdio.h>
+main()
+{ int i,j;
+      int c,d,n,m,max,main;
+ int a[10][10],flag;
+
+   char r[]="no"; 
+  max=0;
+   printf("请输入行列：");
+   scanf("%d,%d",&n,&m); 
+   printf("请输入矩阵：");
+   for(i=0;i<n;i++)
+     for(j=0;j<m;j++)
+	    scanf("%d",&a[i][j]);
+	    
+	    
+   for(i=0;i<n;i++)
+	 {
+	 for(j=0;j<m;j++)
+        printf("%4d",a[i][j]);
+        printf("\n");
+     } 
+     
+     
+     
+	for(i=0;i<n;i++)
+     {
+	 for(j=0;j<m;j++)
+	   if(max<a[i][j])
+	    {
+		 max=a[i][j];
+	     c=i;
+		 d=j;
+	    }
+	     main=max;
+	     flag=1;
+	     for(i=0;i<n;i++)
+	       
+		   if(main>a[i][d])
+	          flag=0;
+	        if(flag)
+	        printf("%3d%3d\n",c,d);
+	        else
+	        printf("%4s",r);
+	     
+    }
+return 0;
+ } 
