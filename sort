@@ -1,0 +1,55 @@
+#include<stdio.h>
+void panduan(int e[200],int n,int b);
+int main()
+{ int a[200];
+  int i,n,target;
+  printf("请输入个数："); 
+ scanf("%d",&n);
+  for(i=0;i<n;i++)
+   scanf("%d",&a[i]);
+  
+  printf("sums=[");
+ for(i=0;i<n;i++)
+   printf("%2d",a[i]);
+   printf("]\n");
+   
+   printf("target=");
+   scanf("%d",&target);
+   
+   panduan(a,n,target);
+   return 0;
+} 
+  
+ void panduan(int e[],int n,int b)
+{
+  	int c=0,i,j,d[200],x[4]={0},t;
+  while(c<n)
+   {
+    if((e[0]+e[1]+e[2]+e[3])==b)
+       {  printf("得[");
+          for(i=0;i<4;i++)
+			 if(e[i]>e[i+1])
+             {  t=e[i];
+                e[i]=e[i+1];
+                e[i+1]=t;
+			  } 
+	        
+		   if(e[0]==x[0]&&e[1]==x[1]&&e[2]==x[2]&&e[3]==x[3])
+			     ; 
+				else 
+				printf("%4d%4d%4d%4d",e[0],e[1],e[2],e[3]);
+		  
+	   
+          printf("]\n");
+	   }
+	for(j=0,i=0;i<n||j<n;i++,j++)
+	      d[j]=e[i];                     //将a[]中的元素储存到d[]中，d[]做为桥梁 
+	for(j=0,i=0;i<n||j<n;i++,j++)
+	 { 
+     if(j==(n-1))
+     e[0]=d[j];
+     e[i+1]=d[j]; 
+     }
+     c++; 
+    }
+}
